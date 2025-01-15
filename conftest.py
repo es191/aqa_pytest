@@ -16,6 +16,7 @@ def api_config():
             "region": "US",
             "size": 12,
             "symbol": "AMRN",
+            "symbols": "AMD,IBM,AAPL",
             "tickersFilter": "AMRN",
             "modules": "ipoEvents,earnings,secReports"
         },

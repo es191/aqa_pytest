@@ -6,7 +6,10 @@ def test_yahoo_finance_quotes(api_config):
     response = requests.get(
         url=f"{api_config['API_URL']}/market/v2/get-quotes",
         headers=api_config["HEADERS"],
-        params=api_config["PARAMS"],
+        params= {
+            'region': api_config['PARAMS']['region'],
+            'symbols': api_config['PARAMS']['symbols'],
+        },
     )
     assert response.status_code == 200
 
