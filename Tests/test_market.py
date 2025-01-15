@@ -5,7 +5,10 @@ def test_yahoo_finance_quotes(api_config):
     """Checking the Yahoo Finance API to get quotes."""
     response = requests.get(
         url=f"{api_config['API_URL']}/market/v2/get-quotes",
-        headers=api_config["HEADERS"],
+        headers= {
+            "x-rapidapi-host": api_config["HEADERS"]["x-rapidapi-host"],
+            "x-rapidapi-key": api_config["HEADERS"]["x-rapidapi-key"],
+        },
         params= {
             'region': api_config['PARAMS']['region'],
             'symbols': api_config['PARAMS']['symbols'],
@@ -29,12 +32,15 @@ def test_yahoo_finance_earnings(api_config):
     
     response = requests.get(
         url = f"{api_config['API_URL']}/market/get-earnings",
-        headers=api_config["HEADERS"],
+        headers= {
+            "x-rapidapi-host": api_config["HEADERS"]["x-rapidapi-host"],
+            "x-rapidapi-key": api_config["HEADERS"]["x-rapidapi-key"],
+        },
         params = {
             'region': api_config['PARAMS']['region'],
             'startDate': cf.get_current_timestamp_millis(6),
             'endDate': cf.get_current_timestamp_millis(),
-            'size': cf.get_random_number(),
+            'size': api_config['PARAMS']['size'],
     }
     )
     
