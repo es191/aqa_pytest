@@ -14,7 +14,9 @@ def api_config():
         },
         "PARAMS": {
             "region": "US",
-            "symbols": "AMD,IBM,AAPL",
             "size": 12,
+            "symbol": "AMRN",
+            "tickersFilter": "AMRN",
+            "modules": "ipoEvents,earnings,secReports"
         },
     }
