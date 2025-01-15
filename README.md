@@ -14,7 +14,9 @@ This project is designed for automated testing using the Pytest framework. It in
 - Download the installer from the official Python website.
 - Follow the installation instructions for your operating system.
 - Ensure to check the option "Add Python to PATH" during installation.
+  
 2.Install Pytest: `pip install pytest`
+
 3.Clone the repository: `git clone https://github.com/es191/aqa_pytest.git`
 
 ## Running Tests
