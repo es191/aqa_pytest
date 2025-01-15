@@ -28,10 +28,10 @@ def test_yahoo_finance_earnings(api_config):
         url = f"{api_config['API_URL']}/market/get-earnings",
         headers=api_config["HEADERS"],
         params = {
-        'region': api_config['PARAMS']['region'],
-        'startDate': cf.get_current_timestamp_millis(6),
-        'endDate': cf.get_current_timestamp_millis(),
-        'size': cf.get_random_number(),
+            'region': api_config['PARAMS']['region'],
+            'startDate': cf.get_current_timestamp_millis(6),
+            'endDate': cf.get_current_timestamp_millis(),
+            'size': cf.get_random_number(),
     }
     )
     
