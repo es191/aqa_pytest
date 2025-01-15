@@ -5,7 +5,10 @@ def test_yahoo_stock_get_summary(api_config):
     """Checking the Yahoo Finance API to get stock summary."""
     response = requests.get(
         url=f"{api_config['API_URL']}/stock/v2/get-summary",
-        headers=api_config["HEADERS"],
+        headers= {
+            "x-rapidapi-host": api_config["HEADERS"]["x-rapidapi-host"],
+            "x-rapidapi-key": api_config["HEADERS"]["x-rapidapi-key"],
+        },
         params= {
             'symbol': api_config['PARAMS']['symbol'],
             'region': api_config['PARAMS']['region'],
@@ -26,7 +29,10 @@ def test_yahoo_stock_events_calendar(api_config):
     """Checking the Yahoo Finance API to get events calendar."""
     response = requests.get(
         url=f"{api_config['API_URL']}/stock/get-events-calendar",
-        headers=api_config["HEADERS"],
+        headers= {
+            "x-rapidapi-host": api_config["HEADERS"]["x-rapidapi-host"],
+            "x-rapidapi-key": api_config["HEADERS"]["x-rapidapi-key"],
+        },
         params= {
             'tickersFilter': api_config['PARAMS']['tickersFilter'],
             'modules': api_config['PARAMS']['modules'],
